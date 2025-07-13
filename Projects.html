@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editing Projects</title>
+  <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+  <link rel="stylesheet" href="manual.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+        background: url('assets/BG 2.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+    
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(0, 0, 0, 0.63);
+        z-index: -1;
+    }
+    
+    #carouselExample {
+        width: 1280px;
+        height: 720px;
+        margin: auto;   
+        position: absolute;   
+        top: 50%;              
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    #carouselExample video{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: black ;
+    }
+
+    #carouselExample .carousel-inner {
+      height: 100%;
+    }
+    #carouselExample .carousel-item {
+      height: 100%;
+    }
+
+    #carouselExample video:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    
+  </style>
+</head>
+</head>
+<body>
+  <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid" >
+      <a class="navbar-brand" style="margin-left: 8px;" href="index.html">Geon's Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="About.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Projects.html">Editing Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Gaming.html">Gaming Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Esports.html">Esports Hub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<center>
+  <h1 style="padding: 2rem; font-size: 54px;">Featured Edits</h1>
+  <div style="margin-top: 80px;" id="carouselExample" class="carousel slide">
+    
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <video src="assets/Squid Game Season 3 Edit.mp4" class="vid" alt="Squid Game Season 3 Edit" controls poster="assets/fragment thumb.png"></video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Fragment | Gi-hun Player 456 Edit | Squid Game Season 3</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <video src="assets/Run Dexter Edit.mp4" class="vid" alt="Run Dexter Edit" controls poster="assets/run thumb.png"></video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Run | Dexter Edit</h5>
+            </div> 
+        </div>
+        <div class="carousel-item">
+            <video src="assets/nilou like we used to do edit (Square Ratio).mp4" class="vid" alt="Nilou Edit" controls poster="assets/we dont talk anymore thumb.png"></video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Like We Used To Do | Nilou Edit</h5>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <video src="assets/Salesman Edit.mp4" class="vid" alt="Salesman Edit" controls poster="assets/dare thumb.png"></video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Dare | Salesman Edit | Squid Game Season 2</h5>
+            </div>
+        </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+  <h4 style="padding:50px; color: white;">All these featured edits can be found on my YouTube Channel <a href="https://www.youtube.com/channel/UCaZcnJ2XJd-ihWezLIFIPQA">@GDGeon</a></h4>
+</div>
+
+</center>
+
+<script>
+  const carousel = document.querySelector('#carouselExample');
+  const videos = carousel.querySelectorAll('video');
+
+  
+  carousel.addEventListener('slide.bs.carousel', function () {
+    videos.forEach(video => {
+      video.pause();
+      video.muted = true;
+      video.load
+    });
+  });
+
+  carousel.addEventListener('slid.bs.carousel', function () {
+    const activeVideo = carousel.querySelector('.carousel-item.active video');
+    if (activeVideo) {
+      activeVideo.muted = false;
+    }
+  });
+</script>
+
+  
+
+
+
+  
+
+</body>
+</html>
